@@ -29,6 +29,10 @@
                     "fontSize": 28,
                     "fontWeight": 300,
                     "fontColor": "#FFFFFF"
+                },
+                "codeGen":
+                {
+                    "target":"NMLabel" // 生成代码的目标控件类型
                 }
             },
             {
