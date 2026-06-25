@@ -1,0 +1,162 @@
+{
+    "version": "1.0",
+    "name": "LoginPage",
+    "root": {
+        "type": "Panel",
+        "id": "login_panel",
+        "layout": {
+            "width": 300,
+            "height": 380,
+            "align": "center"
+        },
+        "style": {
+            "backgroundImage": "images/bg_login.png",
+            "radius": 8,
+            "opacity": 0.9
+        },
+        "children": [
+            {
+                "type": "Label",
+                "id": "title",
+                "props": {
+                    "text": "WELCOME"
+                },
+                "layout": {
+                    "marginTop": 40,
+                    "align": "center"
+                },
+                "style": {
+                    "fontSize": 28,
+                    "fontWeight": 300,
+                    "fontColor": "#FFFFFF"
+                },
+                "codeGen":
+                {
+                    "target":"NMLabel" // 生成代码的目标控件类型
+                }
+            },
+            {
+                "type": "Edit",
+                "id": "user_name",
+                "props": {
+                    "icon": "icons/user.png",
+                    "placeholder": "请输入用户名",
+                    "text": "vincent_chow"
+                },
+                "layout": {
+                    "marginTop": 40,
+                    "width": 240,
+                    "height": 36,
+                    "align": "center"
+                },
+                "style": {
+                    "backgroundColor": "rgba(255,255,255,0.1)",
+                    "borderColor": "#FFFFFF",
+                    "borderWidth": 1,
+                    "radius": 4,
+                    "fontColor": "#FFFFFF"
+                }
+            },
+            {
+                "type": "Edit",
+                "id": "password",
+                "props": {
+                    "icon": "icons/lock.png",
+                    "placeholder": "密码",
+                    "password": true
+                },
+                "layout": {
+                    "marginTop": 15,
+                    "width": 240,
+                    "height": 36,
+                    "align": "center"
+                },
+                "style": {
+                    "backgroundColor": "rgba(255,255,255,0.1)",
+                    "borderColor": "#FFFFFF",
+                    "borderWidth": 1,
+                    "radius": 4,
+                    "fontColor": "#FFFFFF"
+                }
+            },
+            {
+                "type": "Button",
+                "id": "btn_login",
+                "props": {
+                    "text": "登 录"
+                },
+                "layout": {
+                    "marginTop": 28,
+                    "width": 240,
+                    "height": 38,
+                    "align": "center"
+                },
+                "style": {
+                    "backgroundColor": "#3D9BFF",
+                    "radius": 4,
+                    "fontSize": 16,
+                    "fontColor": "#FFFFFF"
+                },
+                "state": {
+                    "hover": {
+                        "backgroundColor": "#57A8FF"
+                    },
+                    "pressed": {
+                        "backgroundColor": "#2C7FE0"
+                    }
+                },
+                "events": {
+                    "click": "OnLoginClick"
+                }
+            },
+            {
+                "type": "HBox",
+                "id": "footer",
+                "layout": {
+                    "marginTop": 60,
+                    "spacing": 8,
+                    "align": "center"
+                },
+                "children": [
+                    {
+                        "type": "Link",
+                        "id": "register",
+                        "props": {
+                            "text": "注册账号"
+                        },
+                        "events": {
+                            "click": "OnRegister"
+                        },
+                        "style": {
+                            "fontSize": 14,
+                            "fontColor": "#FFFFFF"
+                        }
+                    },
+                    {
+                        "type": "Label",
+                        "props": {
+                            "text": "|"
+                        },
+                        "style": {
+                            "fontColor": "#FFFFFF"
+                        }
+                    },
+                    {
+                        "type": "Link",
+                        "id": "forget_password",
+                        "props": {
+                            "text": "忘记密码"
+                        },
+                        "events": {
+                            "click": "OnForgetPassword"
+                        },
+                        "style": {
+                            "fontSize": 14,
+                            "fontColor": "#FFFFFF"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
