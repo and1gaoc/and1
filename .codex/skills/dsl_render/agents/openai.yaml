@@ -1,0 +1,3 @@
+interface:
+  display_name: "DSL Render"
+  short_description: "Render DSL JSON into a target UI framework"

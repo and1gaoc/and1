@@ -1,0 +1,32 @@
+{
+  "skill_name": "dsl_create",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "根据 sample/login/login.png，严格按照 references/dsl字段说明.md 生成 dsl.json，并参考 sample/login/dsl.json 的组织方式。",
+      "expected_output": "生成一个符合 dsl字段说明.md 的 dsl.json，包含 page、root、children 和 assets 等规范字段，结构可用于后续代码生成。",
+      "files": [
+        "sample/login/login.png",
+        "references/dsl字段说明.md",
+        "sample/login/dsl.json"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "读取 sample/login/login.png，严格按照 references/dsl字段说明.md 输出一个 framework-agnostic 的 dsl.json，不要直接生成代码。",
+      "expected_output": "生成一个合法 JSON 文件，字段命名和层级符合 DSL 规范，并保持框架无关。",
+      "files": [
+        "sample/login/login.png",
+        "references/dsl字段说明.md"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "如果输入是 svg，也按同一套 DSL 规则生成 dsl.json。假设用户给了一个 svg 路径，优先使用 svg 的结构信息，再补齐 UI 语义。",
+      "expected_output": "生成说明一致的 dsl.json，并体现 png 与 svg 处理方式的统一输出标准。",
+      "files": [
+        "references/dsl字段说明.md"
+      ]
+    }
+  ]
+}

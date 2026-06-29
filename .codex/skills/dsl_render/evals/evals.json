@@ -1,0 +1,36 @@
+{
+  "skill_name": "dsl_render",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "根据 sample/login/dsl.json，按照 references/dsl字段说明.md 和 references/特定框架的使用说明.md 渲染出目标 UI 框架代码，并保持 dsl.json 不变。",
+      "expected_output": "生成目标 UI 框架的输出文件。输出必须来源于 DSL 和框架说明文件，不能把框架控件类型写回 DSL。",
+      "files": [
+        "sample/login/dsl.json",
+        "references/dsl字段说明.md",
+        "references/特定框架的使用说明.md"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "读取 sample/login/dsl.json，严格按 references/dsl字段说明.md 解释 DSL，再按 references/特定框架的使用说明.md 输出框架代码。如果框架说明缺少某些映射，显式标注限制。",
+      "expected_output": "输出文件应保留 DSL 层级和语义。对缺失映射应输出可见限制说明，而不是静默丢弃或臆造行为。",
+      "files": [
+        "sample/login/dsl.json",
+        "references/dsl字段说明.md",
+        "references/特定框架的使用说明.md",
+        "references/sample-login.md"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "如果 DSL 中存在框架说明未覆盖的节点、样式或事件，保持 DSL 不变，继续生成可落地的部分，并把未覆盖项作为 TODO 或限制说明写出来。",
+      "expected_output": "输出应区分已完成映射与未覆盖映射，且不能通过修改 DSL 来规避框架映射缺口。",
+      "files": [
+        "sample/login/dsl.json",
+        "references/dsl字段说明.md",
+        "references/特定框架的使用说明.md"
+      ]
+    }
+  ]
+}

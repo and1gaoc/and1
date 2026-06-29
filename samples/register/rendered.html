@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Register DSL Render</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      width: 450px; 
+      height: 399px;
+      overflow: hidden;
+      background: #171A24;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+    }
+
+    .page-root {
+      position: relative;
+      width: 450px;
+      height: 399px;
+      background-color: #171A24;
+      overflow: hidden;
+    }
+
+    .node {
+      position: absolute;
+    }
+
+    .label,
+    .edit-placeholder,
+    .button {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      line-height: 1;
+    }
+
+    .title-text {
+      left: 181px;
+      top: 36px;
+      width: 88px;
+      height: 28px;
+      justify-content: center;
+      color: #FFFFFF;
+      font-size: 22px;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .edit-placeholder {
+      left: 33px;
+      width: 388px;
+      height: 34px;
+      padding-left: 14px;
+      color: #8B8D96;
+      font-size: 15px;
+      font-weight: 400;
+      background-color: rgba(0, 0, 0, 0);
+      justify-content: flex-start;
+    }
+
+    .username-edit {
+      top: 88px;
+    }
+
+    .email-edit {
+      top: 149px;
+    }
+
+    .password-edit {
+      top: 209px;
+    }
+
+    .underline {
+      left: 33px;
+      width: 388px;
+      height: 1px;
+      background-color: #D7D7DA;
+    }
+
+    .username-underline {
+      top: 122px;
+    }
+
+    .email-underline {
+      top: 183px;
+    }
+
+    .password-underline {
+      top: 243px;
+    }
+
+    .accept-terms-checkbox {
+      left: 33px;
+      top: 276px;
+      width: 17px;
+      height: 17px;
+      border: 2px solid #F1F1F1;
+      background-color: rgba(0, 0, 0, 0);
+    }
+
+    .accept-terms-label {
+      left: 58px;
+      top: 276px;
+      width: 112px;
+      height: 20px;
+      justify-content: flex-start;
+      color: #FFFFFF;
+      font-size: 15px;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    .register-button {
+      left: 33px;
+      top: 322px;
+      width: 388px;
+      height: 48px;
+      justify-content: center;
+      color: #FFFFFF;
+      background-color: #3F9DF9;
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+      border-radius: 0;
+    }
+  </style>
+</head>
+<body>
+  <main class="page-root" data-source="samples/register/dsl.json">
+    <div class="node label title-text">注册表单</div>
+    <div class="node edit-placeholder username-edit">用户名</div>
+    <div class="node underline username-underline"></div>
+    <div class="node edit-placeholder email-edit">Email</div>
+    <div class="node underline email-underline"></div>
+    <div class="node edit-placeholder password-edit">密码</div>
+    <div class="node underline password-underline"></div>
+    <div class="node accept-terms-checkbox"></div>
+    <div class="node label accept-terms-label">我接受户条款</div>
+    <div class="node button register-button">立即注册</div>
+  </main>
+</body>
+</html>

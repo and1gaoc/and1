@@ -1,0 +1,33 @@
+{
+  "skill_name": "dsl_validate",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Render sample/login/dsl.json to HTML, capture the rendered image, compare it with sample/login/login.png, and report similarity plus visible differences. Strictly validate the DSL against references/dsl字段说明.md first, and output validated-dsl.json if any normalization is needed.",
+      "expected_output": "Produce rendered.html, rendered.png, and validation.md. The report should include DSL compliance status, a similarity score, an overall summary, and concrete difference items. If needed, also produce a spec-compliant validated-dsl.json.",
+      "files": [
+        "sample/login/login.png",
+        "sample/login/dsl.json",
+        "references/dsl字段说明.md"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Read sample/login/dsl.json, validate it strictly against references/dsl字段说明.md, render it through HTML, compare the result with sample/login/login.png, and output the rendered image plus an AI similarity and difference summary.",
+      "expected_output": "Output a validation result that includes DSL compliance findings, at least the HTML reconstruction image, a similarity score, and a readable difference summary. Missing resources should be called out in the report.",
+      "files": [
+        "sample/login/dsl.json",
+        "sample/login/login.png",
+        "references/dsl字段说明.md"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "If the HTML reconstruction differs clearly from the source image, keep the source DSL unchanged, output the current rendering faithfully, explain the key layout, style, resource, or text issues in the report, and only emit a separate validated-dsl.json if the task explicitly asks for strict JSON output.",
+      "expected_output": "The report should distinguish DSL schema problems, structure problems, style problems, and missing-resource problems. It should not silently change DSL semantics during validation.",
+      "files": [
+        "references/dsl字段说明.md"
+      ]
+    }
+  ]
+}

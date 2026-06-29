@@ -1,0 +1,302 @@
+{
+  "version": "1.0",
+  "meta": {
+    "source": "samples/register/register.png",
+    "inputType": "png",
+    "generator": "ai",
+    "reviewStatus": "draft",
+    "info": "注册表单页面，包含深色背景、标题、用户名/Email/密码输入框、条款复选框和立即注册按钮。背景纹理从截图推断为待提取资源。"
+  },
+  "page": {
+    "id": "register_page",
+    "name": "注册页",
+    "className": "RegisterPage",
+    "width": 450,
+    "height": 399,
+    "background": "#171A24"
+  },
+  "root": {
+    "id": "page_root",
+    "name": "页面根容器",
+    "type": "ImagePanel",
+    "layout": {
+      "x": 0,
+      "y": 0,
+      "width": 450,
+      "height": 399
+    },
+    "style": {
+      "backgroundColor": "#171A24"
+    },
+    "asset": {
+      "path": "assets/register_bg.png",
+      "format": "png",
+      "scaleMode": "stretch",
+      "assetId": "registerBg"
+    },
+    "codegen": {
+      "variableName": "m_pageRoot",
+      "semanticRole": "container",
+      "expose": true,
+      "notes": "深色模糊背景为从原图推断的占位资源，生成前可从截图中单独提取。"
+    },
+    "children": [
+      {
+        "id": "title_text",
+        "name": "注册标题",
+        "type": "Label",
+        "props": {
+          "text": "注册表单"
+        },
+        "layout": {
+          "x": 181,
+          "y": 36,
+          "width": 88,
+          "height": 28
+        },
+        "style": {
+          "fontSize": 22,
+          "fontWeight": 700,
+          "fontColor": "#FFFFFF",
+          "align": "center"
+        },
+        "codegen": {
+          "variableName": "m_titleText",
+          "semanticRole": "title",
+          "expose": true
+        }
+      },
+      {
+        "id": "username_edit",
+        "name": "用户名输入框",
+        "type": "Edit",
+        "props": {
+          "placeholder": "用户名",
+          "inputMode": "normal"
+        },
+        "layout": {
+          "x": 33,
+          "y": 88,
+          "width": 388,
+          "height": 34,
+          "paddingLeft": 14
+        },
+        "style": {
+          "backgroundColor": "rgba(0,0,0,0)",
+          "fontSize": 15,
+          "fontColor": "#8B8D96",
+          "align": "left"
+        },
+        "events": {
+          "change": "OnUsernameChanged"
+        },
+        "codegen": {
+          "variableName": "m_usernameEdit",
+          "semanticRole": "input",
+          "expose": true
+        }
+      },
+      {
+        "id": "username_underline",
+        "name": "用户名下划线",
+        "type": "Line",
+        "layout": {
+          "x": 33,
+          "y": 122,
+          "width": 388,
+          "height": 1
+        },
+        "style": {
+          "backgroundColor": "#D7D7DA"
+        },
+        "codegen": {
+          "variableName": "m_usernameUnderline",
+          "semanticRole": "decorativeLine"
+        }
+      },
+      {
+        "id": "email_edit",
+        "name": "Email输入框",
+        "type": "Edit",
+        "props": {
+          "placeholder": "Email",
+          "inputMode": "normal"
+        },
+        "layout": {
+          "x": 33,
+          "y": 149,
+          "width": 388,
+          "height": 34,
+          "paddingLeft": 14
+        },
+        "style": {
+          "backgroundColor": "rgba(0,0,0,0)",
+          "fontSize": 15,
+          "fontColor": "#8B8D96",
+          "align": "left"
+        },
+        "events": {
+          "change": "OnEmailChanged"
+        },
+        "codegen": {
+          "variableName": "m_emailEdit",
+          "semanticRole": "input",
+          "expose": true
+        }
+      },
+      {
+        "id": "email_underline",
+        "name": "Email下划线",
+        "type": "Line",
+        "layout": {
+          "x": 33,
+          "y": 183,
+          "width": 388,
+          "height": 1
+        },
+        "style": {
+          "backgroundColor": "#D7D7DA"
+        },
+        "codegen": {
+          "variableName": "m_emailUnderline",
+          "semanticRole": "decorativeLine"
+        }
+      },
+      {
+        "id": "password_edit",
+        "name": "密码输入框",
+        "type": "Edit",
+        "props": {
+          "placeholder": "密码",
+          "inputMode": "password"
+        },
+        "layout": {
+          "x": 33,
+          "y": 209,
+          "width": 388,
+          "height": 34,
+          "paddingLeft": 14
+        },
+        "style": {
+          "backgroundColor": "rgba(0,0,0,0)",
+          "fontSize": 15,
+          "fontColor": "#8B8D96",
+          "align": "left"
+        },
+        "events": {
+          "change": "OnPasswordChanged"
+        },
+        "codegen": {
+          "variableName": "m_passwordEdit",
+          "semanticRole": "input",
+          "expose": true
+        }
+      },
+      {
+        "id": "password_underline",
+        "name": "密码下划线",
+        "type": "Line",
+        "layout": {
+          "x": 33,
+          "y": 243,
+          "width": 388,
+          "height": 1
+        },
+        "style": {
+          "backgroundColor": "#D7D7DA"
+        },
+        "codegen": {
+          "variableName": "m_passwordUnderline",
+          "semanticRole": "decorativeLine"
+        }
+      },
+      {
+        "id": "accept_terms_checkbox",
+        "name": "接受条款复选框",
+        "type": "CheckBox",
+        "layout": {
+          "x": 33,
+          "y": 276,
+          "width": 17,
+          "height": 17
+        },
+        "style": {
+          "backgroundColor": "rgba(0,0,0,0)",
+          "borderColor": "#F1F1F1",
+          "borderWidth": 2
+        },
+        "events": {
+          "change": "OnAcceptTermsChanged"
+        },
+        "codegen": {
+          "variableName": "m_acceptTermsCheckbox",
+          "semanticRole": "input",
+          "expose": true
+        }
+      },
+      {
+        "id": "accept_terms_label",
+        "name": "接受条款文本",
+        "type": "Label",
+        "props": {
+          "text": "我接受户条款"
+        },
+        "layout": {
+          "x": 58,
+          "y": 276,
+          "width": 112,
+          "height": 20
+        },
+        "style": {
+          "fontSize": 15,
+          "fontWeight": 700,
+          "fontColor": "#FFFFFF",
+          "align": "left"
+        },
+        "codegen": {
+          "variableName": "m_acceptTermsLabel",
+          "semanticRole": "label"
+        }
+      },
+      {
+        "id": "register_button",
+        "name": "立即注册按钮",
+        "type": "Button",
+        "props": {
+          "text": "立即注册"
+        },
+        "layout": {
+          "x": 33,
+          "y": 322,
+          "width": 388,
+          "height": 48
+        },
+        "style": {
+          "backgroundColor": "#3F9DF9",
+          "fontSize": 16,
+          "fontWeight": 700,
+          "fontColor": "#FFFFFF",
+          "align": "center",
+          "radius": 0
+        },
+        "events": {
+          "click": "OnRegisterClicked"
+        },
+        "codegen": {
+          "variableName": "m_registerButton",
+          "semanticRole": "primaryAction",
+          "expose": true
+        }
+      }
+    ]
+  },
+  "assets": [
+    {
+      "id": "registerBg",
+      "path": "assets/register_bg.png",
+      "type": "image",
+      "format": "png",
+      "scaleMode": "stretch"
+    }
+  ]
+}
